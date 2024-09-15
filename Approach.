@@ -1,0 +1,50 @@
+
+# **Approach Documentation: AI-Powered Meeting Management Tool**
+
+## **1. Overview**
+
+The goal of this project is to streamline the meeting process using AI technologies such as Large Language Models (LLMs), clustering algorithms, and semantic search. The tool assists in pre-meeting preparation, mid-meeting transcription analysis, and post-meeting summarization to ensure clarity, reduce redundancy, and improve overall meeting productivity.
+
+## **2. Problem Statement**
+
+Meetings often suffer from disorganized discussions, unaddressed topics, and lack of follow-up. To solve these issues, the tool focuses on:
+- Automating agenda generation.
+- Grouping similar discussion points.
+- Analyzing meeting content for resolved/unresolved topics.
+- Summarizing meetings with key decisions and actions.
+
+## **3. Technology Selection**
+
+- **OpenAI GPT-4**: Used for generating agendas and meeting summaries.
+- **KMeans Clustering**: Groups similar discussion topics based on semantic similarity.
+- **Whisper AI**: Provides transcription from meeting recordings.
+- **SentenceTransformer**: Calculates semantic similarity for topic matching.
+- **Chroma DB**: Stores document embeddings for efficient retrieval during meetings.
+
+## **4. Solution Approach**
+
+### **Step 1: Pre-Meeting Document Upload**
+Participants upload documents (PDFs, text files) before the meeting. These documents are embedded using **SentenceTransformer** to create vector representations stored in **Chroma DB**. This ensures easy retrieval during the meeting for reference or agenda generation.
+
+### **Step 2: Discussion Topics Clustering**
+Participants submit discussion points via a Streamlit form. **KMeans clustering** is used to group similar topics based on semantic similarity, ensuring that discussions are concise and organized. This minimizes redundancy by merging related topics into clusters.
+
+### **Step 3: Transcription and Resolved/Unresolved Topic Detection**
+After the meeting, the tool uses **Whisper AI** to transcribe meeting recordings. The transcriptions are compared with the submitted discussion points using **SentenceTransformer** to check which topics were addressed, classifying them as either "resolved" or "unresolved."
+
+### **Step 4: Meeting Summary Generation**
+Finally, **OpenAI GPT-4** generates a meeting summary that includes:
+- The clustered discussion points.
+- Decisions made during the meeting.
+- Action items assigned.
+- Resolved and unresolved topics.
+
+## **5. Benefits**
+
+- **Efficient Meeting Management**: Avoids topic duplication by clustering similar discussion points.
+- **Real-Time Analysis**: Detects unresolved topics, ensuring no key points are missed.
+- **Automated Summarization**: Provides a concise, AI-generated summary for post-meeting follow-up.
+
+## **6. Conclusion**
+
+This tool integrates key AI technologies to manage meetings more effectively. It simplifies the entire process—from document management and topic clustering to transcription analysis and summary generation—thereby enhancing meeting productivity and ensuring all important discussions are addressed.
