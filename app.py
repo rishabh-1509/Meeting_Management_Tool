@@ -100,7 +100,6 @@ if uploaded_video is not None:
     detailed_summary = generate_detailed_summary(transcription, discussion_data, "Decisions made", "Action items assigned")
     st.write(detailed_summary)
 
-# Add "Retrieve Relevant Information" button
 if st.button("Retrieve Relevant Information"):
     st.subheader("Relevant Information from Uploaded Documents")
     for topic in discussion_data:
