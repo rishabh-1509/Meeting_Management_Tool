@@ -1,7 +1,3 @@
-Certainly! Here’s a detailed documentation for your project, including setup instructions, operational guidelines, dependencies, assumptions, and reasoning behind design and implementation choices.
-
----
-
 # Meeting Document and Video Management System
 
 ## Overview
