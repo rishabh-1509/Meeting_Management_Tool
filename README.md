@@ -1,4 +1,4 @@
-# Meeting Document and Video Management System
+# Meeting Management Tool
 
 ## Overview
 
